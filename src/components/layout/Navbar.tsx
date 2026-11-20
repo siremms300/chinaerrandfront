@@ -14,7 +14,7 @@ export default function Navbar() {
       <nav className="mx-auto max-w-7xl flex items-center justify-between px-6 py-3">
         <Link href="/" className="flex items-center gap-3">
           <Image src="/logo.png" alt="China Errand" width={120} height={120} priority className="h-11 w-auto object-contain" />
-          <span className="font-extrabold text-lg tracking-tight">China Errand</span>
+          <span className="font-extrabold text-lg tracking-tight"></span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
