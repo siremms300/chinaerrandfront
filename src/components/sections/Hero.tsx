@@ -31,7 +31,7 @@ export default function Hero() {
               <Button size="lg">Start sourcing</Button>
             </Link>
             <a
-              href="https://wa.me/2340000000000"
+              href="https://wa.me/2349065219811"
               target="_blank"
               rel="noreferrer"
             >
