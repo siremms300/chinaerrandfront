@@ -45,6 +45,53 @@ export default function InterestForm() {
 //   }
 
 
+// async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+//   e.preventDefault();
+//   const formEl = e.currentTarget;
+//   setStatus('loading');
+//   setError('');
+
+//   const form = new FormData(formEl);
+//   const categories = form.getAll('categories') as string[];
+
+//   const payload = {
+//     name: form.get('name'),
+//     phone: form.get('phone'),
+//     email: form.get('email') || undefined,
+//     state: form.get('state'),
+//     city: form.get('city'),
+//     buyerType: form.get('buyerType'),
+//     purchasedBefore: form.get('purchasedBefore') || undefined,
+//     categories,
+//     specificProducts: form.get('specificProducts'),
+//     quantityRange: form.get('quantityRange'),
+//     budgetRange: form.get('budgetRange'),
+//     frequency: form.get('frequency') || undefined,
+//     timeline: form.get('timeline') || undefined,
+//     wantsUpdates: form.get('wantsUpdates') || undefined,
+//     notes: form.get('notes') || undefined,
+//   };
+
+//   console.log('[submit] payload →', payload);
+
+//   try {
+//     const res = await submitLead(payload);
+//     console.log('[submit] success →', res);
+//     formEl.reset();
+//     setStatus('success');
+//   } catch (err: any) {
+//     console.error('[submit] error status →', err?.response?.status);
+//     console.error('[submit] error body →', err?.response?.data);
+//     console.error('[submit] raw →', err);
+//     setStatus('error');
+//     setError(err?.response?.data?.message || 'Something went wrong. Please try again.');
+//   }
+// }
+
+
+
+
+
 async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
   const formEl = e.currentTarget;
@@ -72,21 +119,21 @@ async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     notes: form.get('notes') || undefined,
   };
 
-  console.log('[submit] payload →', payload);
-
   try {
-    const res = await submitLead(payload);
-    console.log('[submit] success →', res);
+    await submitLead(payload);
     formEl.reset();
     setStatus('success');
   } catch (err: any) {
-    console.error('[submit] error status →', err?.response?.status);
-    console.error('[submit] error body →', err?.response?.data);
-    console.error('[submit] raw →', err);
-    setStatus('error');
+    console.error('Submit error:', err?.response?.status, err?.response?.data);
     setError(err?.response?.data?.message || 'Something went wrong. Please try again.');
+    setStatus('error');
   }
 }
+
+
+
+
+
 
 
   if (status === 'success') {
