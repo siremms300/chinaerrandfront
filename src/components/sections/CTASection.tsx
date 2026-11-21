@@ -20,7 +20,7 @@ export default function CTASection() {
               <Link href="/register-interest">
                 <Button size="lg" variant="dark">Register interest</Button>
               </Link>
-              <a href="https://wa.me/2340000000000" target="_blank" rel="noreferrer">
+              <a href="https://wa.me/2349065219811" target="_blank" rel="noreferrer">
                 <Button size="lg" variant="secondary">Chat on WhatsApp</Button>
               </a>
             </div>
